@@ -1,0 +1,21 @@
+name: Fix
+description: Report something that needs fixing
+title: "[FIX] "
+labels: ["fix"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What needs to be fixed?
+      placeholder: Describe the issue...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What should happen instead?
+      placeholder: Describe the expected behavior...
+    validations:
+      required: false
