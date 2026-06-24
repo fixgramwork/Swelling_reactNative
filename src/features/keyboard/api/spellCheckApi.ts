@@ -1,5 +1,6 @@
 import { API_URL } from '../../../constants';
 import type { SpellCheckResult, SpellCheckSuggestion } from '../types';
+import { demoSpellCheckExamples } from '../constants/demoSpellCheckExamples';
 
 export type BackendSuggestion = {
   id?: string;
@@ -22,38 +23,19 @@ export type BackendSpellCheckResponse = {
 
 const SPELL_CHECK_ENDPOINT = `${API_URL.replace(/\/$/, '')}/api/spell-check`;
 
-const previewRules = [
-  {
-    pattern: /안되요/g,
-    replacement: '안 돼요',
-    reason: '되다의 활용은 문맥상 돼요가 자연스럽습니다.',
-  },
-  {
-    pattern: /되요/g,
-    replacement: '돼요',
-    reason: '되어요의 준말은 돼요입니다.',
-  },
-  {
-    pattern: /됬/g,
-    replacement: '됐',
-    reason: '되었다의 준말은 됐다입니다.',
-  },
-  {
-    pattern: /할께/g,
-    replacement: '할게',
-    reason: '의지를 나타낼 때는 할게로 적습니다.',
-  },
-  {
-    pattern: /몇일/g,
-    replacement: '며칠',
-    reason: '표준어는 며칠입니다.',
-  },
-  {
-    pattern: /왠만/g,
-    replacement: '웬만',
-    reason: '웬만하다가 바른 표기입니다.',
-  },
-];
+function replaceAllText(text: string, searchText: string, replacement: string) {
+  return text.split(searchText).join(replacement);
+}
+
+function isOverlappingRange(
+  ranges: ReadonlyArray<readonly [number, number]>,
+  start: number,
+  end: number,
+) {
+  return ranges.some(
+    ([rangeStart, rangeEnd]) => start < rangeEnd && end > rangeStart,
+  );
+}
 
 export function normalizeSuggestion(
   suggestion: BackendSuggestion,
@@ -108,22 +90,36 @@ export function normalizeSpellCheckResponse(
 
 export function createPreviewSpellCheck(text: string): SpellCheckResult {
   const suggestions: SpellCheckSuggestion[] = [];
+  const matchedRanges: Array<[number, number]> = [];
   let correctedText = text;
 
-  previewRules.forEach((rule, ruleIndex) => {
-    const matches = Array.from(text.matchAll(rule.pattern));
+  demoSpellCheckExamples.forEach((example) => {
+    let searchIndex = text.indexOf(example.wrongText);
+    let matchIndex = 0;
 
-    matches.forEach((match, matchIndex) => {
-      suggestions.push({
-        id: `preview-${ruleIndex}-${matchIndex}`,
-        original: match[0],
-        replacement: rule.replacement,
-        reason: rule.reason,
-        confidence: 0.86,
-      });
-    });
+    while (searchIndex !== -1) {
+      const matchEndIndex = searchIndex + example.wrongText.length;
 
-    correctedText = correctedText.replace(rule.pattern, rule.replacement);
+      if (!isOverlappingRange(matchedRanges, searchIndex, matchEndIndex)) {
+        matchedRanges.push([searchIndex, matchEndIndex]);
+        suggestions.push({
+          id: `${example.id}-${matchIndex}`,
+          original: example.wrongText,
+          replacement: example.correctText,
+          reason: example.reason,
+          confidence: 0.92,
+        });
+      }
+
+      searchIndex = text.indexOf(example.wrongText, searchIndex + example.wrongText.length);
+      matchIndex += 1;
+    }
+
+    correctedText = replaceAllText(
+      correctedText,
+      example.wrongText,
+      example.correctText,
+    );
   });
 
   return {

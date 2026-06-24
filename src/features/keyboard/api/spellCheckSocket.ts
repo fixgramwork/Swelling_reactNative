@@ -90,11 +90,7 @@ export class SpellCheckSocketClient {
       return;
     }
 
-    this.connect();
-
-    if (this.socket?.readyState === WebSocket.OPEN) {
-      this.sendLatestText();
-    }
+    this.handlers.onResult(createPreviewSpellCheck(text));
   }
 
   close() {

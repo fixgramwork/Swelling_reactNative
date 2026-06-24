@@ -62,12 +62,14 @@ function getStatusLabel(status: CheckStatus) {
 }
 
 function getDisplayText(text: string, result: SpellCheckResult | null) {
-  if (result?.correctedText) {
-    return result.correctedText;
+  if (result?.suggestions.length) {
+    return result.suggestions
+      .map((suggestion) => `${suggestion.original} → ${suggestion.replacement}`)
+      .join('\n');
   }
 
   if (text.trim().length > 0) {
-    return text;
+    return '발견된 맞춤법 오류가 없습니다.';
   }
 
   return '문장을 입력하면 교정 결과가 여기에 표시됩니다.';
