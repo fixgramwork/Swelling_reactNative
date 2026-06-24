@@ -1,0 +1,49 @@
+name: Keyboard Settings
+description: Request changes for keyboard settings and account session behavior
+title: "[FEAT] 키보드 설정 페이지"
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        키보드 설정 화면과 로그아웃 동작을 요청할 때 사용하는 템플릿입니다.
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: What should users be able to do?
+      placeholder: 예) 설정 페이지에서 자동 교정, 실시간 검사, 키보드 배열을 변경하고 로그아웃할 수 있어야 합니다.
+    validations:
+      required: true
+  - type: textarea
+    id: keyboard-settings
+    attributes:
+      label: Keyboard Settings
+      description: Which keyboard options are required?
+      placeholder: |
+        - 자동 교정
+        - 실시간 검사
+        - 교정 강도
+        - 키보드 배열
+    validations:
+      required: true
+  - type: textarea
+    id: account-actions
+    attributes:
+      label: Account Actions
+      description: Which account/session actions should be available?
+      placeholder: 예) 설정 페이지에서 로그아웃 버튼을 제공하고 로그아웃 결과를 사용자에게 알려줍니다.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: How do we know this is complete?
+      placeholder: |
+        - 설정 탭에서 키보드 설정 화면에 접근할 수 있습니다.
+        - 사용자가 각 키보드 옵션을 변경할 수 있습니다.
+        - 로그아웃 버튼을 누르면 세션 종료 콜백이 실행됩니다.
+        - TypeScript 검증이 통과합니다.
+    validations:
+      required: true
