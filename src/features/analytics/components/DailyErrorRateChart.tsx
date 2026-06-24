@@ -175,10 +175,11 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     borderColor: colors.borderLight,
     borderCurve: 'continuous',
-    borderRadius: 8,
+    borderRadius: 16,
     borderWidth: 1,
     gap: spacing.lg,
     padding: spacing.md,
+    boxShadow: '0 8px 22px rgba(25, 31, 40, 0.06)',
   },
   sectionHeader: {
     alignItems: 'flex-start',
@@ -214,7 +215,7 @@ const styles = StyleSheet.create({
     maxWidth: 112,
   },
   legendDot: {
-    borderRadius: 4,
+    borderRadius: 999,
     height: 8,
     width: 8,
   },
@@ -294,12 +295,12 @@ const styles = StyleSheet.create({
   },
   bar: {
     borderCurve: 'continuous',
-    borderRadius: 8,
+    borderRadius: 999,
     minHeight: 8,
-    width: '100%',
+    width: '78%',
   },
   latestBar: {
-    boxShadow: '0 6px 14px rgba(0, 122, 255, 0.22)',
+    boxShadow: '0 6px 14px rgba(0, 100, 255, 0.24)',
   },
   xAxisLabel: {
     color: colors.textSecondary,

@@ -29,6 +29,7 @@ export function MetricCard({ label, value, detail, tone = 'blue' }: MetricCardPr
 
   return (
     <View style={styles.card}>
+      <View style={[styles.toneBar, { backgroundColor: toneColor }]} />
       <Text numberOfLines={1} style={styles.label}>
         {label}
       </Text>
@@ -52,13 +53,20 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     borderColor: colors.borderLight,
     borderCurve: 'continuous',
-    borderRadius: 8,
+    borderRadius: 16,
     borderWidth: 1,
     flex: 1,
     gap: spacing.xs,
     minHeight: 118,
     minWidth: 0,
     padding: spacing.md,
+    overflow: 'hidden',
+    boxShadow: '0 8px 22px rgba(25, 31, 40, 0.06)',
+  },
+  toneBar: {
+    borderRadius: 999,
+    height: 4,
+    width: 34,
   },
   label: {
     color: colors.textSecondary,
