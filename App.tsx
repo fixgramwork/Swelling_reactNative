@@ -1,10 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
-import { CorrectionKeyboard } from './src/features/keyboard/components/CorrectionKeyboard';
+import { SpellingProgressScreen } from './src/features/analytics';
 
 export default function App() {
   return (
     <>
-      <CorrectionKeyboard />
+      <SpellingProgressScreen />
       <StatusBar style="dark" />
     </>
   );
