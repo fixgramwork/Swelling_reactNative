@@ -6,13 +6,13 @@ import {
   View,
   useWindowDimensions,
 } from 'react-native';
-import { colors, spacing, typography } from '../../../theme';
-import { dailySpellingMetrics } from '../constants';
+import { colors, spacing, typography } from '@/theme';
+import { dailySpellingMetrics } from '@/features/analytics/constants';
 import {
   formatSignedPercentPoint,
   getDailySpellingProgress,
   getSpellingProgressSummary,
-} from '../utils';
+} from '@/features/analytics/utils';
 import { DailyErrorRateChart } from './DailyErrorRateChart';
 import { MetricCard } from './MetricCard';
 
