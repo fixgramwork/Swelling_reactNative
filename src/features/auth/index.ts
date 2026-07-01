@@ -1,2 +1,2 @@
-export * from './types';
-export { default as LoginForm } from './components/LoginForm';
+export * from '@/features/auth/types';
+export { default as LoginForm } from '@/features/auth/components/LoginForm';

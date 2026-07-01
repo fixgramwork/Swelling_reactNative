@@ -1,5 +1,5 @@
-import { API_URL } from '../../../constants';
-import type { SpellCheckResult, SpellCheckSuggestion } from '../types';
+import { API_URL } from '@/constants';
+import type { SpellCheckResult, SpellCheckSuggestion } from '@/features/keyboard/types';
 
 export type BackendSuggestion = {
   id?: string;

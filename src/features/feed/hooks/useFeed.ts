@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import type { Post } from '../types';
+import type { Post } from '@/features/feed/types';
 
 export function useFeed() {
   const [posts, setPosts] = useState<Post[]>([]);

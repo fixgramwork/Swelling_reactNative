@@ -1,2 +1,2 @@
-export * from './types';
-export { default as FeedList } from './components/FeedList';
+export * from '@/features/feed/types';
+export { default as FeedList } from '@/features/feed/components/FeedList';

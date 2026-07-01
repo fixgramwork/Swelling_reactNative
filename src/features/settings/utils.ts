@@ -1,5 +1,5 @@
-import { DEFAULT_KEYBOARD_SETTINGS } from './constants';
-import type { KeyboardSettings } from './types';
+import { DEFAULT_KEYBOARD_SETTINGS } from '@/features/settings/constants';
+import type { KeyboardSettings } from '@/features/settings/types';
 
 export function isDefaultKeyboardSettings(settings: KeyboardSettings) {
   return (

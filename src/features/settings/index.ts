@@ -1,13 +1,13 @@
-export { SettingsScreen } from './components/SettingsScreen';
-export { useKeyboardSettings } from './hooks/useKeyboardSettings';
+export { SettingsScreen } from '@/features/settings/components/SettingsScreen';
+export { useKeyboardSettings } from '@/features/settings/hooks/useKeyboardSettings';
 export {
   correctionStrengthOptions,
   DEFAULT_KEYBOARD_SETTINGS,
   keyboardLayoutOptions,
-} from './constants';
+} from '@/features/settings/constants';
 export type {
   KeyboardCorrectionStrength,
   KeyboardLayout,
   KeyboardSettingOption,
   KeyboardSettings,
-} from './types';
+} from '@/features/settings/types';

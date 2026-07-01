@@ -1,4 +1,4 @@
-import type { DailySpellingMetric } from './types';
+import type { DailySpellingMetric } from '@/features/analytics/types';
 
 export const dailySpellingMetrics: DailySpellingMetric[] = [
   {

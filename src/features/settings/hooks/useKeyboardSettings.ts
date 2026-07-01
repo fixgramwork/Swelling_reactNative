@@ -1,7 +1,7 @@
 import { useCallback, useMemo, useState } from 'react';
-import { DEFAULT_KEYBOARD_SETTINGS } from '../constants';
-import type { KeyboardSettings } from '../types';
-import { isDefaultKeyboardSettings } from '../utils';
+import { DEFAULT_KEYBOARD_SETTINGS } from '@/features/settings/constants';
+import type { KeyboardSettings } from '@/features/settings/types';
+import { isDefaultKeyboardSettings } from '@/features/settings/utils';
 
 export function useKeyboardSettings(
   initialSettings: KeyboardSettings = DEFAULT_KEYBOARD_SETTINGS,

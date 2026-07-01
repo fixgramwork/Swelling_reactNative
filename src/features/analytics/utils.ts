@@ -2,7 +2,7 @@ import type {
   DailySpellingMetric,
   DailySpellingProgressPoint,
   SpellingProgressSummary,
-} from './types';
+} from '@/features/analytics/types';
 
 function roundToOne(value: number) {
   return Math.round(value * 10) / 10;

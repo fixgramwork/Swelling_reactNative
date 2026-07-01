@@ -1,4 +1,4 @@
-import type { Post } from '../types';
+import type { Post } from '@/features/feed/types';
 
 export const feedApi = {
   getPosts: async (): Promise<Post[]> => {

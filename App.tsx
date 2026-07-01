@@ -8,11 +8,11 @@ import {
   Text,
   View,
 } from 'react-native';
-import { useAuth } from './src/features/auth/hooks/useAuth';
-import { SpellingProgressScreen } from './src/features/analytics';
-import { CorrectionKeyboard } from './src/features/keyboard/components/CorrectionKeyboard';
-import { SettingsScreen, useKeyboardSettings } from './src/features/settings';
-import { colors, spacing, typography } from './src/theme';
+import { SpellingProgressScreen } from '@/features/analytics';
+import { useAuth } from '@/features/auth/hooks/useAuth';
+import { CorrectionKeyboard } from '@/features/keyboard/components/CorrectionKeyboard';
+import { SettingsScreen, useKeyboardSettings } from '@/features/settings';
+import { colors, spacing, typography } from '@/theme';
 
 type AppTab = 'keyboard' | 'analytics' | 'settings';
 

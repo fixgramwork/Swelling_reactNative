@@ -1,6 +1,6 @@
-export { SpellingProgressScreen } from './components/SpellingProgressScreen';
+export { SpellingProgressScreen } from '@/features/analytics/components/SpellingProgressScreen';
 export type {
   DailySpellingMetric,
   DailySpellingProgressPoint,
   SpellingProgressSummary,
-} from './types';
+} from '@/features/analytics/types';

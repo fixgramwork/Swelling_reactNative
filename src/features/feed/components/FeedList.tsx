@@ -1,5 +1,5 @@
 import { FlatList, StyleSheet, Text, View } from 'react-native';
-import type { Post } from '../types';
+import type { Post } from '@/features/feed/types';
 
 interface FeedListProps {
   posts: Post[];

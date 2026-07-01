@@ -1,7 +1,7 @@
 import { Text, View } from 'react-native';
 import { colors } from '@/theme';
 import type { DailySpellingProgressPoint } from '@/features/analytics/types';
-import { styles } from './DailyErrorRateChart.styles';
+import { styles } from '@/features/analytics/components/DailyErrorRateChart.styles';
 
 interface DailyErrorRateChartProps {
   data: DailySpellingProgressPoint[];

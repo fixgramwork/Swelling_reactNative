@@ -9,13 +9,16 @@ import {
   type StyleProp,
   type ViewStyle,
 } from 'react-native';
-import { SpellCheckSocketClient } from '../api/spellCheckSocket';
-import type { SpellCheckResult, SpellCheckSuggestion } from '../types';
+import { SpellCheckSocketClient } from '@/features/keyboard/api/spellCheckSocket';
+import type {
+  SpellCheckResult,
+  SpellCheckSuggestion,
+} from '@/features/keyboard/types';
 import {
   composeHangulInput,
   countCharacters,
   deleteHangulInput,
-} from '../../../lib/hangulKeyboard';
+} from '@/lib/hangulKeyboard';
 
 const toss = {
   blue: '#0064FF',

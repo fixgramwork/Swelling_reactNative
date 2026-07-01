@@ -3,7 +3,7 @@ import type {
   KeyboardLayout,
   KeyboardSettingOption,
   KeyboardSettings,
-} from './types';
+} from '@/features/settings/types';
 
 export const DEFAULT_KEYBOARD_SETTINGS: KeyboardSettings = {
   autoCorrectionEnabled: true,

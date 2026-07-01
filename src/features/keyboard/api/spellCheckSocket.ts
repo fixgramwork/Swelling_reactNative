@@ -1,10 +1,10 @@
-import { API_URL } from '../../../constants';
+import { API_URL } from '@/constants';
 import {
   createPreviewSpellCheck,
   normalizeSpellCheckResponse,
   type BackendSpellCheckResponse,
-} from './spellCheckApi';
-import type { SpellCheckResult } from '../types';
+} from '@/features/keyboard/api/spellCheckApi';
+import type { SpellCheckResult } from '@/features/keyboard/types';
 
 type SocketStatus = 'connecting' | 'open' | 'closed' | 'error';
 

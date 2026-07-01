@@ -8,12 +8,15 @@ import {
   View,
   useWindowDimensions,
 } from 'react-native';
-import { colors, spacing, typography } from '../../../theme';
+import { colors, spacing, typography } from '@/theme';
 import {
   correctionStrengthOptions,
   keyboardLayoutOptions,
-} from '../constants';
-import type { KeyboardSettingOption, KeyboardSettings } from '../types';
+} from '@/features/settings/constants';
+import type {
+  KeyboardSettingOption,
+  KeyboardSettings,
+} from '@/features/settings/types';
 
 interface SettingsScreenProps {
   accountEmail?: string;
