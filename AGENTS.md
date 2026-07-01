@@ -29,6 +29,7 @@ src/
 - 화면 컴포넌트에 API 로직 직접 작성 금지
 - 하드코딩된 API URL 사용 금지
 - console.log 남긴 채 PR 금지
+- 명시 요청 없이 `.github/ISSUE_TEMPLATE` 파일 수정 또는 추가 금지
 
 ## PR 규칙
 - PR 하나에 하나의 변경만 포함

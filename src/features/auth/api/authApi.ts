@@ -1,4 +1,4 @@
-import type { LoginCredentials, User } from '../types';
+import type { LoginCredentials, User } from '@/features/auth/types';
 
 export const authApi = {
   login: async (credentials: LoginCredentials): Promise<User> => {
